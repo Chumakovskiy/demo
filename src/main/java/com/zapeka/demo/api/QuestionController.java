@@ -33,8 +33,9 @@ public class QuestionController {
     private String ERROR_MESSAGE;
 
     /**
-     * @param info
-     * @return
+     * Method that save question into database
+     * @param info questions parameters
+     * @return save question into database
      */
     @PostMapping("")
     public QuestionInfo addQuestion(@RequestBody QuestionManageInfo info, HttpServletRequest request) {
@@ -45,10 +46,11 @@ public class QuestionController {
     }
 
     /**
-     * @param countryCode
-     * @param offset
-     * @param limit
-     * @return
+     * Method return list of all accepted questions by country code, supports pagination.
+     * @param countryCode country code of country from request
+     * @param offset number of results to skip before beginning to return results
+     * @param limit number of results that are returned
+     * @return list all accepted questions
      */
     @GetMapping("")
     public List<QuestionInfo> getQuestions(@RequestParam(value = "countryCode", required = false) String countryCode,
@@ -62,8 +64,9 @@ public class QuestionController {
     }
 
     /**
-     * @param countryCode
-     * @return
+     * Method return count of all accepted questions by country code.
+     * @param countryCode country code of country from request
+     * @return number of all accepted questions
      */
     @GetMapping("/count")
     public int getQuestionCount(@RequestParam(value = "countryCode", required = false) String countryCode) {
