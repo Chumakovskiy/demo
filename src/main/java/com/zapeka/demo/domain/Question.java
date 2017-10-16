@@ -56,7 +56,6 @@ public class Question {
         this.createdTime = createdTime;
     }
 
-    //TODO equal & hashcode REFACTOR
     @Override
     public boolean equals(Object o) {
         if (this == o) {

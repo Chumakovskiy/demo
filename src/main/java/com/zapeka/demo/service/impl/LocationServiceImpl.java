@@ -44,7 +44,6 @@ public class LocationServiceImpl implements LocationService {
     @Transactional(readOnly = false)
     @Override
     public Country getOrCreateCountry(String ipAddress) {
-        //TODO подумать где инициализировать defaultCountry
         if (defaultCountry == null) {
             defaultCountry = countryRepository.getCountryByCountryCode(DEFAULT_COUNTRY_CODE).get();
         }
